@@ -21,6 +21,4 @@ jobs:
 
     steps:
     - name: Dump steps context
-      env:
-        STEPS_CONTEXT: ${{ toJson(action_repository) }}
-      run: echo "$STEPS_CONTEXT"
+      run: run: echo "$GITHUB_CONTEXT"
