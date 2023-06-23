@@ -21,4 +21,4 @@ jobs:
 
     steps:
     - name: Dump steps context
-      run: run: echo "$GITHUB_CONTEXT"
+      run: echo "$GITHUB_CONTEXT"
