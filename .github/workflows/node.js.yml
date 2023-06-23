@@ -20,7 +20,10 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - run: echo "action.repo: $github.action_repository" 
+    - name: Dump steps context
+      env:
+        STEPS_CONTEXT: ${{ toJson(steps) }}
+      run: echo "$STEPS_CONTEXT"
     - uses: actions/checkout@v3
     - run: yarn install
     - name: Use Node.js ${{ matrix.node-version }}
