@@ -1,0 +1,62 @@
+{
+    "login_success": "Login success",
+    "login_failed": "Login Failed",
+    "logout_success": "Logout success",
+    "logout_failed": "Logout failed",
+    "admin_not_found": "Admin not found",
+    "wrong_password": "Wrong password",
+    "something_went_wrong": "Something went wrong",
+    "error_unknown": "Oops! something went wrong",
+
+    "mayor_get_success": "Mayor details fetched successfully",
+    "mayor_image_upload_success": "Mayor image upload success",
+
+    "municipality_get_success": "Municipality details retrieved successfully",
+    "municipality_not_found": "Municipality not found",
+    "municipality_id_required": "Municipality id is required",
+
+    "address_book_post_success": "Address added successfully",
+    "address_book_get_success": "Address details successfully retrieved",
+    "address_book_get_one_success": "Address details retrieved successfully",
+    "address_book_put_success": "Address updated successfully",
+    "address_book_delete_success": "Address deleted successfully",
+    "address_book_not_found": "Address does not exist",
+    "address_book_phone_already_exists": "Address already exists",
+
+    "address_category_post_success": "Address category created successfully",
+    "address_category_get_success": "Address category retrieved successfully",
+    "address_category_get_one_success": "Address category details retrieved successfully",
+    "address_category_put_success": "Address category updated successfully",
+    "address_category_delete_success": "Address category deleted successfully",
+    "address_category_not_found": "Address category not exist",
+
+    "events_post_success": "Events created successfully",
+    "events_get_success": "Events retrieved successfully",
+    "events_get_one_success": "Event details retrieved successfully",
+    "events_put_success": "Event successfully updated",
+    "events_delete_success": "Event successfully deleted",
+    "event_not_found": "Event does not exist",
+
+    "news_post_success": "News created successfully",
+    "news_get_success": "News retrieved successfully",
+    "news_get_one_success": "News details retrieved successfully",
+    "news_put_success": "News successfully updated",
+    "news_delete_success": "News deleted successfully",
+    "news_not_found": "News does not exist",
+
+    "offers_post_success": "Offer created successfully",
+    "offers_get_success": "Offers retrieved successfully",
+    "offers_get_one_success": "Offer details successfully",
+    "offers_put_success": "Offer updated successfully",
+    "offers_delete_success": "Offer deleted successfully",
+    "offers_not_found": "Offer does not exist",
+    "offers_image_upload_success": "Offer image uploaded successfully",
+
+    "today_get_success": "Today data retrieved",
+
+    "image_upload_success": "Image uploaded successfully",
+    "image_upload_failure": "Image upload failed",
+    "image_get_success": "Image retrieved successfully",
+    "image_get_failure": "Image cannot be retrieved",
+    "image_not_found": "Image does not exist"
+}

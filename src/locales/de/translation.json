@@ -1,0 +1,62 @@
+{
+    "login_success": "Anmeldung erfolgreich",
+    "login_failed": "Anmeldung fehlgeschlagen",
+    "logout_success": "Abmeldung erfolgreich",
+    "logout_failed": "Abmeldung fehlgeschlagen",
+    "admin_not_found": "Admin nicht gefunden",
+    "wrong_password": "Falsches Passwort",
+    "something_went_wrong": "Etwas ging schief",
+    "error_unknown": "Ups! Etwas ist schief gelaufen",
+
+    "mayor_get_success": "Bürgermeisterdetails erfolgreich abgeholt",
+    "mayor_image_upload_success": "Bürgermeisterbild erfolgreich hochgeladen",
+
+    "municipality_get_success": "Gemeinde erfolgreich abgerufen",
+    "municipality_not_found": "Gemeinde wurde nicht gefunden",
+    "municipality_id_required": "Gemeinde-ID ist erforderlich",
+
+    "address_book_post_success": "Adresse erfolgreich hinzugefügt",
+    "address_book_get_success": "Adresse erfolgreich abgerufen",
+    "address_book_get_one_success": "Adressdetails erfolgreich abgeholt",
+    "address_book_put_success": "Adresse erfolgreich aktualisiert",
+    "address_book_delete_success": "Adresse erfolgreich gelöscht",
+    "address_book_not_found": "Adresse existiert nicht",
+    "address_book_phone_already_exists": "Adresse existiert nicht",
+
+    "address_category_post_success": "Adresskategorie erfolgreich erstellt",
+    "address_category_get_success": "Kategorie GemeindeAdresse erfolgreich abgerufen",
+    "address_category_get_one_success": "Adresskategorie erfolgreich abgerufen",
+    "address_category_put_success": "Adresskategorie erfolgreich aktualisiert",
+    "address_category_delete_success": "Adresskategorie erfolgreich gelöscht",
+    "address_category_not_found": "Adresskategorie existiert nicht",
+
+    "events_post_success": "Ereignisse erfolgreich erstellt",
+    "events_get_success": "Ereignisse erfolgreich abgerufen",
+    "events_get_one_success": "Ereignisdetails erfolgreich abgerufe",
+    "events_put_success": "Ereignis erfolgreich aktualisiert",
+    "events_delete_success": "Ereignisse erfolgreich gelöscht",
+    "event_not_found": "Ereignis existiert nicht",
+
+    "news_post_success": "Nachricht erfolgreich erstellt",
+    "news_get_success": "Nachricht erfolgreich abgerufen",
+    "news_get_one_success": "News-Details erfolgreich abgerufen",
+    "news_put_success": "News erfolgreich aktualisiert",
+    "news_delete_success": "Nachricht erfolgreich gelöscht",
+    "news_not_found": "Die Nachrichten-ID existiert nicht",
+
+    "offers_post_success": "Angebot erfolgreich erstellt",
+    "offers_get_success": "Angebote erfolgreich abgerufen",
+    "offers_get_one_success": "Angebotsdetails erfolgreich",
+    "offers_put_success": "Angebot erfolgreich aktualisiert",
+    "offers_delete_success": "Angebote erfolgreich gelöscht",
+    "offers_not_found": "Angebot existiert nicht",
+    "offers_image_upload_success": "Angebote erfolgreich hochgeladen",
+
+    "today_get_success": "Heute Details erfolgreich abgerufen",
+
+    "image_upload_success": "Bild erfolgreich hochgeladen",
+    "image_upload_failure": "Bild kann nicht hochgeladen werden",
+    "image_get_success": "Bild erfolgreich geholt",
+    "image_get_failure": "Bild kann nicht abgerufen werden",
+    "image_not_found": "Bild existiert nicht"
+}

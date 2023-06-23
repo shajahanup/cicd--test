@@ -1,0 +1,97 @@
+import DB from '@/databases';
+import { checkIfEventExists, getEventsByDate } from './events.util';
+import { eventCountQuery, eventSearchQuery } from './events.query';
+import { pick } from 'lodash';
+import QueryOptionsInterface from '@/interfaces/queryOptions.interface';
+import CountQueryInterfae from '@/interfaces/countQuery.interface';
+import { HttpException } from '@/exceptions/HttpException';
+import eventMessages from '@/messages/event.messages';
+import { getTableExclusion } from '@/utils/get-table-exclusion';
+import { getTableInclusion } from '@/utils/get-table-inclusion';
+import { EventTranslationKeys } from '@/utils/constants/translation-keys';
+
+export default class EventService {
+  private events = DB.Events;
+
+  public async getEvents(params: QueryOptionsInterface, municipalityId: number, language: string): Promise<Object[]> {
+    const replacements = {
+      municipalityId,
+      search: params.search ?? null,
+    };
+    const query = eventSearchQuery(params, language);
+    const events = await DB.sequelize.query(query, { replacements, type: DB.Sequelize.QueryTypes.SELECT });
+    return events;
+  }
+
+  public async getEventsCount(params: QueryOptionsInterface, municipalityId: number): Promise<number> {
+    const replacements = {
+      municipalityId,
+      search: params.search ?? null,
+    };
+    const query = eventCountQuery(params);
+    const count: CountQueryInterfae[] = await DB.sequelize.query(query, { replacements, type: DB.Sequelize.QueryTypes.SELECT });
+    return count[0].count;
+  }
+
+  public async getEventsMobile(municipalityId: number, language: string): Promise<Object> {
+    // const replacements = { municipalityId };
+    // const query = getEventsByDateQuery(language);
+    // const eventData = await DB.sequelize.query(query, { replacements, type: DB.Sequelize.QueryTypes.SELECT });
+    const exclude = getTableExclusion(EventTranslationKeys);
+    const include: any = getTableInclusion(language, EventTranslationKeys);
+    const events = await this.events.findAll({
+      where: { municipalityId, isDeleted: false },
+      order: [['startDate', 'ASC']],
+      attributes: {
+        exclude,
+        include,
+      },
+    });
+<<<<<<< HEAD
+    const eventsByDate: any = getEventsByDate(events);
+=======
+    const eventsByDate = getEventsByDate(events);
+>>>>>>> release/v2.1.0
+    return [{ eventData: eventsByDate }];
+  }
+
+  public async getOneEvent(id: number, language: string): Promise<object> {
+    const eventExist = await checkIfEventExists(id);
+    if (!eventExist) {
+      throw new HttpException(eventMessages.EVENT_NOT_FOUND);
+    }
+    const exclude = getTableExclusion(EventTranslationKeys);
+    const include: any = getTableInclusion(language, EventTranslationKeys);
+    const event = await this.events.findOne({
+      where: { id },
+      attributes: {
+        include,
+        exclude,
+      },
+    });
+    return event;
+  }
+
+  public async createEvent(body: any, user) {
+    const createBody = pick(body, ['municipalityId', 'startDate', 'endDate', 'titleEn', 'titleDe', 'noteEn', 'noteDe', 'location', 'address']);
+    const createdBy = user.id;
+    createBody.location = `(${body.location.latitude}, ${body.location.longitude})`;
+    await this.events.create({ ...createBody, createdBy });
+  }
+
+  public async updateEvent(updateBody: any, id: number) {
+    const eventExist = await checkIfEventExists(id);
+    if (!eventExist) {
+      throw new HttpException(eventMessages.EVENT_NOT_FOUND);
+    }
+    await this.events.update({ ...updateBody, location: `(${updateBody.location.latitude}, ${updateBody.location.longitude})` }, { where: { id } });
+  }
+
+  public async deleteEvent(id: number) {
+    const eventExist = await checkIfEventExists(id);
+    if (!eventExist) {
+      throw new HttpException(eventMessages.EVENT_NOT_FOUND);
+    }
+    await this.events.update({ isDeleted: true }, { where: { id } });
+  }
+}

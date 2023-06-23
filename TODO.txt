@@ -1,0 +1,2 @@
+1. Redis integration, and doc
+2. prettier,  "husky" pre-commit
