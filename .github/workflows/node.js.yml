@@ -10,7 +10,7 @@ on:
     branches: [ "ci-test" ]
 
 jobs:
-  build:
+  lint-validation:
 
     runs-on: self-hosted
 
@@ -28,4 +28,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm run lint
-    - run: npm run build
