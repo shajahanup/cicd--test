@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "ci-test" ]
 env:
-  NAME: shajahan
+  NAME: shajahan up
 
 jobs:
   lint-validation:
