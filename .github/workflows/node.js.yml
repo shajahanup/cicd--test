@@ -10,7 +10,7 @@ on:
     branches: [ "ci-test" ]
 env:
   NAME: shajahan up
-  VERSION: 1.0
+  VERSION: 1.0.1
 
 jobs:
   lint-validation:
@@ -21,6 +21,4 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - run: yarn install
-    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $NAME$VERSION
+    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh "$NAME$VERSION"
