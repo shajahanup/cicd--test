@@ -11,6 +11,7 @@ on:
 env:
   NAME: shajahan up
   VERSION: "1.0"
+  BUILD_PATH: build
 
 jobs:
   lint-validation:
@@ -21,4 +22,4 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $VERSION
+    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $(PWD)/build
