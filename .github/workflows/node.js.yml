@@ -22,5 +22,5 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $NAME_$VERSION
+    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $NAME"_"$VERSION
     # - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $(pwd)/build
