@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "ci-test" ]
 env:
-  NAME: shajahan up
+  NAME: shajahan_up
   VERSION: "1.0"
   BUILD_PATH: build
 
@@ -22,4 +22,5 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $(pwd)/build
+    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $NAME_$VERSION
+    # - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $(pwd)/build
