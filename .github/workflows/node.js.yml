@@ -8,12 +8,12 @@ on:
     branches: [ "ci-test" ]
   pull_request:
     branches: [ "ci-test" ]
+env:
+  NAME: shajahan
 
 jobs:
   lint-validation:
     runs-on: self-hosted
-    env:
-      NAME: shajahan
     strategy:
       matrix:
         node-version: [18.x]
