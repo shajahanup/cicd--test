@@ -11,9 +11,9 @@ on:
 
 jobs:
   lint-validation:
-
     runs-on: self-hosted
-
+    env:
+      NAME: shajahan
     strategy:
       matrix:
         node-version: [18.x]
@@ -22,4 +22,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: yarn install
-    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $(pwd)
+    - run: /home/shajahan/simplogics/momcicd/build_scripts/copy_build.sh $NAME
